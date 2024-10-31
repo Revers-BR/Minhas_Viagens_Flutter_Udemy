@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minhas_viagens_flutter_udemy/telas/mapa.dart';
 
 class Home extends StatefulWidget {
 
@@ -27,7 +28,12 @@ class _Home extends State<Home> {
   }
 
   _abrirLocal(){
-    
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => const Mapa()
+      )
+    );
   }
 
   @override
@@ -73,8 +79,8 @@ class _Home extends State<Home> {
       ),
 
       floatingActionButton: FloatingActionButton(
+        onPressed: _abrirLocal,
         child: const Icon(Icons.add),
-        onPressed: () => _abrirLocal(),
       ),
     );
   }
