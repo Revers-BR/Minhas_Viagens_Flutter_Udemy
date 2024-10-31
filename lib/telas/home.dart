@@ -22,12 +22,21 @@ class _Home extends State<Home> {
 
   }
 
+  _abrirMapa(){
+
+  }
+
+  _abrirLocal(){
+    
+  }
+
   @override
   Widget build (BuildContext context ) {
     return Scaffold(
       appBar: AppBar( 
         title: const Text("Minhas Viagens"),
       ),
+
       body: Column(
         children: [
           Expanded(
@@ -38,6 +47,7 @@ class _Home extends State<Home> {
 
                 return Card(
                   child: ListTile(
+                    onTap: () => _abrirMapa(),
                     title: Text(titulo),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -60,6 +70,11 @@ class _Home extends State<Home> {
             )
           )
         ],
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () => _abrirLocal(),
       ),
     );
   }
